@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/planet.png';
 
 function Header() {
@@ -9,8 +10,8 @@ function Header() {
           <h1 className="text-2xl font-semibold">Space Travelers Hub</h1>
         </div>
         <ul className="flex gap-5">
-          <li>Rockets</li>
-          <li>Mission</li>
+          <Link to="/">Rocket</Link>
+          <Link to="/mission">Missions</Link>
           <li>Profile</li>
         </ul>
       </nav>
