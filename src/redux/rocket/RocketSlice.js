@@ -12,7 +12,7 @@ export const fetchRockets = createAsyncThunk(
       id: rocket.id,
       rocketName: rocket.rocket_name,
       description: rocket.description,
-      flickrImages: rocket.flickr_images,
+      flickrImages: rocket.flickr_images[0],
       reserved: false,
     }));
     return rockets;
@@ -48,7 +48,7 @@ const rocketSlice = createSlice({
     },
     [fetchRockets.fulfilled]: (state, action) => {
       state.status = 'succeeded';
-      state.rockets = state.rockets.concat(action.payload);
+      state.rockets = action.payload; // Replace the existing rockets with the fetched rockets
     },
     [fetchRockets.rejected]: (state, action) => {
       state.status = 'failed';
