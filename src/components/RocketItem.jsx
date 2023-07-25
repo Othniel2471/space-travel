@@ -15,7 +15,7 @@ function RocketItem() {
         </p>
         <button
           type="button"
-          className="capitalize bg-[#017bfe] mt-2 text-white rounded py-2 px-4 hover:bg-[#0d8bf0]"
+          className="capitalize bg-[#017bfe] mt-2 text-white rounded py-"
         >
           reserve rocket
         </button>
