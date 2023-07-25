@@ -1,7 +1,8 @@
 import React from 'react';
+import RocketItem from '../components/RocketItem';
 
 function RocketPage() {
-  return <div>RocketPage</div>;
+  return <RocketItem />;
 }
 
 export default RocketPage;
