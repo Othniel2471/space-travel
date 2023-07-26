@@ -28,18 +28,23 @@ const rocketSlice = createSlice({
   },
   reducers: {
     reserveRocket: (state, action) => {
-      const { id } = action.payload;
-      const rocket = state.rockets.find((rocket) => rocket.id === id);
-      if (rocket) {
-        rocket.reserved = true;
-      }
+      const data = JSON.parse(localStorage.getItem('rockets')) || state.rockets;
+      const newState = data.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: true };
+      });
+      state.rockets = newState;
+      localStorage.setItem('rockets', JSON.stringify(newState));
     },
+
     cancelReservation: (state, action) => {
-      const { id } = action.payload;
-      const rocket = state.rockets.find((rocket) => rocket.id === id);
-      if (rocket) {
-        rocket.reserved = false;
-      }
+      const data = JSON.parse(localStorage.getItem('rockets')) || state.rockets;
+      const newState = data.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: false };
+      });
+      state.rockets = newState;
+      localStorage.setItem('rockets', JSON.stringify(newState));
     },
   },
   extraReducers: {
@@ -48,7 +53,7 @@ const rocketSlice = createSlice({
     },
     [fetchRockets.fulfilled]: (state, action) => {
       state.status = 'succeeded';
-      state.rockets = action.payload; // Replace the existing rockets with the fetched rockets
+      state.rockets = action.payload;
     },
     [fetchRockets.rejected]: (state, action) => {
       state.status = 'failed';
