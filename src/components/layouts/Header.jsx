@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/planet.png';
 
 function Header() {
@@ -9,10 +9,16 @@ function Header() {
           <img src={logo} alt="" className="w-1/12" />
           <h1 className="text-2xl font-semibold">Space Travelers Hub</h1>
         </div>
-        <ul className="flex gap-5">
-          <Link to="/">Rocket</Link>
-          <Link to="/mission">Missions</Link>
-          <Link to="/profile">Profile</Link>
+        <ul className="flex gap-5 text-blue-500">
+          <NavLink
+            className={({ isActive }) => (isActive ? 'border-b-2 border-blue-500' : 'border-none')}
+            to="/"
+          >
+            Rocket
+          </NavLink>
+          <NavLink className={({ isActive }) => (isActive ? 'border-b-2 border-blue-500' : 'border-none')} to="/mission">Missions</NavLink>
+          <div className="border-l-2 border-gray-400" />
+          <NavLink className={({ isActive }) => (isActive ? 'border-b-2 border-blue-500' : 'border-none')} to="/profile">Profile</NavLink>
         </ul>
       </nav>
     </header>
