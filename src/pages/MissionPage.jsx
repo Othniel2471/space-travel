@@ -1,7 +1,10 @@
 import React from 'react';
+import MissionItem from '../components/MissionItem';
 
 function MissionPage() {
-  return <div>MissionPage</div>;
+  return (
+    <MissionItem />
+  );
 }
 
 export default MissionPage;
