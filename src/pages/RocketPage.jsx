@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRockets } from '../redux/rocket/RocketSlice';
 import RocketItem from '../components/RocketItem';
@@ -8,14 +8,16 @@ function RocketPage() {
 
   let rockets = useSelector((state) => state.rockets.rockets);
 
-  const localRockets = JSON.parse(localStorage.getItem('rockets'));
+  const localRockets = JSON.parse(localStorage.getItem('rockets')) || [];
   if (localRockets.length > 0) {
     rockets = localRockets;
   }
 
   useEffect(() => {
-    dispatch(fetchRockets());
-  }, [dispatch]);
+    if (rockets.length === 0) {
+      dispatch(fetchRockets());
+    }
+  }, [dispatch, rockets.length]);
 
   const renderRockets = () => {
     if (rockets.length > 0) {
