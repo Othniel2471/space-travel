@@ -21,14 +21,14 @@ const RocketItem = ({
   };
   return (
     <div className="container mx-auto px-3 py-3 flex gap-10 flex-col md:flex-row">
-      <div className="col-span-2 w-2/12">
+      <div className="col-span-2 w-full md:w-2/12">
         <img
           src={flickrImages}
           alt={rocketName}
           className="w-full h-auto object-cover"
         />
       </div>
-      <div className="col-span-7 w-10/12 mt-4 md:mt-0 ml-3">
+      <div className="col-span-7 w-full  md:w-10/12 mt-4 md:mt-0 ml-3">
         <h3 className="capitalize text-lg font-semibold">{rocketName}</h3>
         <p className="title">
           {reserved && (
