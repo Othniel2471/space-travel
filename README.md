@@ -51,8 +51,8 @@
 
 <!-- Live Demo -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
-<a href=""> Coming soon 🚀</a>
+<!-- ## 🚀 Live Demo <a name="live-demo"></a>
+<a href=""> Coming soon 🚀</a> -->
 <!-- <a href="https://ticoniq.github.io/awesome-book"> See Project 🚀</a> -->
 
 <!-- GETTING STARTED -->
