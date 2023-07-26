@@ -12,7 +12,7 @@ function Header() {
         <ul className="flex gap-5">
           <Link to="/">Rocket</Link>
           <Link to="/mission">Missions</Link>
-          <li>Profile</li>
+          <Link to="/profile">Profile</Link>
         </ul>
       </nav>
     </header>
