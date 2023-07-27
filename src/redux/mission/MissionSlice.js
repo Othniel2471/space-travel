@@ -7,17 +7,19 @@ const initialState = {
   error: undefined,
 };
 
-export const fetchMissions = createAsyncThunk('mission/fetchMission', async (thunkAPI) => {
-  try {
-    const response = await axios('https://api.spacexdata.com/v3/missions');
-    return response.data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue('Something went wrong');
-  }
-});
+export const fetchMissions = createAsyncThunk(
+  'mission/fetchMission',
+  async (thunkAPI) => {
+    try {
+      const response = await axios('https://api.spacexdata.com/v3/missions');
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue('Something went wrong');
+    }
+  },
+);
 
 const missionSlice = createSlice({
-
   name: 'missions',
   initialState,
   reducers: {
