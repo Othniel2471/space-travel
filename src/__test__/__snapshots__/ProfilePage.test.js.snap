@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component testing Profile component should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="container mx-auto px-3 py-3 flex gap-10 flex-col md:flex-row"
+  >
+    <div
+      class="w-6/12"
+    >
+      <h3
+        class="text-lg font-semibold"
+      >
+        My Missions
+      </h3>
+      <p
+        class="border border-gray-300 px-4 py-3 text-left"
+      >
+        No Missions
+      </p>
+    </div>
+    <div
+      class="w-6/12"
+    >
+      <h3
+        class="text-lg font-semibold"
+      >
+        My Rockets
+      </h3>
+      <p
+        class="border border-gray-300 px-4 py-3 text-left"
+      >
+        No Rockets
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
