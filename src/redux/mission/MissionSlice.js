@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
   missions: [],
@@ -10,7 +11,7 @@ export const fetchMissions = createAsyncThunk(
   'mission/fetchMission',
   async (thunkAPI) => {
     try {
-      const response = await fetch('https://api.spacexdata.com/v3/missions');
+      const response = await axios('https://api.spacexdata.com/v3/missions');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue('Something went wrong');
